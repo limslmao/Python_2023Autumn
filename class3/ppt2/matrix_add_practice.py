@@ -1,8 +1,19 @@
 #python
 
 a = [[1,2,4], [3,5,7], [2,4,9]]
+# 1 2 4
+# 3 5 7
+# 2 4 9
 b = [[1]*3 for row in range(3)]
+# 1 1 1
+# 1 1 1
+# 1 1 1
+
+
 c = [[None]*3 for row in range(3)]
+# '' '' ''
+# '' '' ''
+# '' '' ''
 
 #matrix addition
 for i in range(3):
