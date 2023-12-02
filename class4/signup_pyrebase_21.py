@@ -1,8 +1,5 @@
 import pyrebase
-import tkinter as tk
-from tkinter import Label
-from tkinter import Button
-from tkinter import Entry
+from tkinter import *
 
 # // Your web app's Firebase configuration
 config = {
@@ -22,7 +19,7 @@ auth = firebase.auth()
 
 
 # create Label in login Windows
-root = tk.Tk()
+root = Tk()
 
 loginlabel = Label(root, text = 'Login Page')
 accountlabel = Label(root, text = 'Account')
@@ -55,8 +52,10 @@ def addUser(view, accountentry, passwordentry):
         user = auth.create_user_with_email_and_password(account, password)
         print("Successfully signup!")
         resultLabel.config(text = "Successfully signup!") # reset label for successfully signup.
-    except:
-        print("Email account has already exist!")
-        resultLabel.config(text = "Email account has already exist!") # reset label for fail to signup.
-
+    except Exception as e:
+        # print("Email account has already exist!")
+        # resultLabel.config(text = "Email account has already exist!") # reset label for fail to signup.
+        print(f"創建使用者失敗: {e}") # reset label for fail to signup.
+        resultLabel["text"] = "Email account has already exist!"
+         
 root.mainloop()

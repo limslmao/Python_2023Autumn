@@ -32,7 +32,7 @@ resultLabel = Label(root, text = "")
 # 創建帳號和密碼輸入框
 accountentry = Entry(root)
 passwordentry = Entry(root, show="*")  # 密碼輸入會顯示為星號
-# signUpbutton = Button(root, text = 'Sign Up', width=10, command=lambda: addUser(root, accountentry, passwordentry))
+signUpbutton = Button(root, text = 'Sign Up', width=10, command=lambda: addUser(root, accountentry, passwordentry))
 loginbutton = Button(root, text = 'Login', width=10, command=lambda: verifyUser(root, accountentry, passwordentry))
 
 # 放置元件
@@ -41,6 +41,7 @@ accountlabel.pack(pady=5)
 accountentry.pack(pady=5)
 passwordlabel.pack(pady=5)
 passwordentry.pack(pady=5)
+signUpbutton.pack(pady=5)
 loginbutton.pack(pady=5)
 resultLabel.pack(pady=5)
 
@@ -55,9 +56,11 @@ def addUser(view, accountentry, passwordentry):
         user = auth.create_user_with_email_and_password(account, password)
         print("Successfully signup!")
         resultLabel.config(text = "Successfully signup!") # reset label for successfully signup.
-    except:
-        print("Email account has already exist!")
-        resultLabel.config(text = "Email account has already exist!") # reset label for fail to signup.
+    except Exception as e:
+        # print("Email account has already exist!")
+        # resultLabel.config(text = "Email account has already exist!") # reset label for fail to signup.
+        print(f"創建使用者失敗: {e}") # reset label for fail to signup.
+        resultLabel["text"] = "Email account has already exist!"
 
 ## login from Firebase function 
 def verifyUser(view, accountentry, passwordentry):
