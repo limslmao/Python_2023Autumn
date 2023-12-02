@@ -23,9 +23,6 @@ auth = firebase.auth()
 
 # create Label in login Windows
 root = tk.Tk()
-root.geometry("300x200")
-
-tk.Label(root, text="Hello, Tkinter!").pack()
 
 loginlabel = Label(root, text = 'Login Page')
 accountlabel = Label(root, text = 'Account')
