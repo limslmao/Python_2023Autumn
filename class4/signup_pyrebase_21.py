@@ -32,8 +32,8 @@ resultLabel = Label(root, text = "")
 # 創建帳號和密碼輸入框
 accountentry = Entry(root)
 passwordentry = Entry(root, show="*")  # 密碼輸入會顯示為星號
-
 signUpbutton = Button(root, text = 'Sign Up', width=10, command=lambda: addUser(root, accountentry, passwordentry))
+
 
 # 放置元件
 loginlabel.pack(pady=5)  # 在標籤上方添加間隔
@@ -43,7 +43,6 @@ passwordlabel.pack(pady=5)
 passwordentry.pack(pady=5)
 signUpbutton.pack(pady=5)
 resultLabel.pack(pady=5)
-
 
 ## sign up from Firebase function
 def addUser(view, accountentry, passwordentry):
