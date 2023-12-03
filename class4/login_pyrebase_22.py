@@ -1,8 +1,5 @@
 import pyrebase
-import tkinter as tk
-from tkinter import Label
-from tkinter import Button
-from tkinter import Entry
+from tkinter import *
 
 # // Your web app's Firebase configuration
 config = {
@@ -22,7 +19,7 @@ auth = firebase.auth()
 
 
 # create Label in login Windows
-root = tk.Tk()
+root = Tk()
 
 loginlabel = Label(root, text = 'Login Page')
 accountlabel = Label(root, text = 'Account')
