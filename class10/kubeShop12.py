@@ -26,10 +26,6 @@ config = {
 firebase = pyrebase.initialize_app(config)
 # Get a reference to the auth service
 storage = firebase.storage()
-# Connect firebase and the python script by using app config.
-firebase = pyrebase.initialize_app(config)
-# Get a reference to the auth service
-storage = firebase.storage()
 all_files = storage.list_files()
 for file in all_files:
     if file.name.startswith(dir_name): # Only need the file starts with directory we want.
